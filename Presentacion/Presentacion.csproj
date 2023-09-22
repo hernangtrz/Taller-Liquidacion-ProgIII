@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{15BA7129-FC0A-4964-BD0E-F74953C32D32}</ProjectGuid>
+    <ProjectGuid>{DD2A89C2-F729-4697-8873-ADD5E2D9FA32}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>LiquidacionImpuestos</RootNamespace>
-    <AssemblyName>LiquidacionImpuestos</AssemblyName>
+    <RootNamespace>Presentacion</RootNamespace>
+    <AssemblyName>Presentacion</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,16 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{1794366a-d5a3-4376-addc-67b698a57793}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ENTITY\ENTITY.csproj">
-      <Project>{2faa6efa-3dcd-4348-a902-5b414efc9010}</Project>
-      <Name>ENTITY</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
