@@ -14,14 +14,18 @@ namespace ENTITY
         public Double salarioDevengado { get; set; }    
         public Double valorHospitalizacion { get; set; }    
         public Double valorCuotaModeradora { get; set; }
+        public Double Tarifa { get; set; }
 
-        public LiquidacionCuotaModeradora(int numeroLiquidacion, int idPaciente, int tipoAfilacion, double salarioDevengado, double valorHospitalizacion)
+
+
+        public LiquidacionCuotaModeradora(int numeroLiquidacion, int idPaciente, int tipoAfilacion, double salarioDevengado, double valorHospitalizacion, double tarifa)
         {
             this.numeroLiquidacion = numeroLiquidacion;
             this.idPaciente = idPaciente;
             this.tipoAfilacion = tipoAfilacion;
             this.salarioDevengado = salarioDevengado;
             this.valorHospitalizacion = valorHospitalizacion;
+            this.Tarifa = tarifa;
         }
 
 
