@@ -18,13 +18,14 @@ namespace ENTITY
 
 
 
-        public LiquidacionCuotaModeradora(int numeroLiquidacion, int idPaciente, int tipoAfilacion, double salarioDevengado, double valorHospitalizacion, double tarifa)
+        public LiquidacionCuotaModeradora(int numeroLiquidacion, int idPaciente, int tipoAfilacion, double salarioDevengado, double valorHospitalizacion, double valorCuotaModeradora, double tarifa)
         {
             this.numeroLiquidacion = numeroLiquidacion;
             this.idPaciente = idPaciente;
             this.tipoAfilacion = tipoAfilacion;
             this.salarioDevengado = salarioDevengado;
             this.valorHospitalizacion = valorHospitalizacion;
+            this.valorCuotaModeradora = valorCuotaModeradora;
             this.Tarifa = tarifa;
         }
 

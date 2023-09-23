@@ -17,25 +17,34 @@ namespace BLL
             liquidacionCuotaModeradoraRepository = new LiquidacionCuotaModeradoraRepository();
         }
 
-        public Double CalcularTarifa(Double salarioDevengado)
+        public Double CalcularTarifa(Double salarioDevengado, int tipoAfiliacion)
         {
             Double tarifa = 0;
 
-            if(salarioDevengado > 2320000)
+            if (tipoAfiliacion == 1)
             {
-                tarifa = 0.15;
-            }
-            if(salarioDevengado < 2320000 &&  salarioDevengado > 5800000)
+                if (salarioDevengado > 2320000)
+                {
+                    tarifa = 0.15;
+                }
+                if (salarioDevengado < 2320000 && salarioDevengado > 5800000)
+                {
+                    tarifa = 0.20;
+                }
+                if (salarioDevengado > 5800000)
+                {
+                    tarifa = 0.25;
+                }
+
+            }else if (tipoAfiliacion == 2)
             {
-                tarifa = 0.20;
+                tarifa = 0.05;
             }
-            if(salarioDevengado > 5800000)
-            {
-                tarifa = 0.25;
-            }
+
 
             return tarifa;
         }
+
 
         public Double CalcularCuotaModeradora(Double salarioDevengado,Double valorHospitalizacion, Double tarifa, int tipoAfiliacion)
         {
