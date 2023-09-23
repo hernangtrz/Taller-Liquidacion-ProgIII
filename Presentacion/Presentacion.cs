@@ -63,14 +63,37 @@ namespace Presentacion
                     LiquidacionCuotaModeradora liquidacion = new LiquidacionCuotaModeradora(numeroLiquidacion, fechaLiquidacion,idPaciente,tipoAfilacion,salarioDevengado,valorHospitalizacion);
                     Tarifa = liquidacion.CalcularTarifa(salarioDevengado,tipoAfilacion);
                     valorCuotaModeradora = liquidacion.CalcularCuotaModeradora(salarioDevengado,valorHospitalizacion, Tarifa, tipoAfilacion);
+                    LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
+                    string message = liquidacionCuotaModeradoraService.Guardar(liquidacion);
 
                     Console.WriteLine("El valor de la Cuota Moderadora del Paciente es : " + valorCuotaModeradora );
                     Console.ReadKey();
                 }
                 else if (op == 2)
                 {
-                   
 
+                    Console.Clear();
+                    Console.WriteLine("Liquidaciones realizadas");
+                    Console.WriteLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------------");
+                    Console.WriteLine();
+                    LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
+                    foreach (var liquidacion in liquidacionCuotaModeradoraService.ConsultarTodos())
+                    {
+                        Console.WriteLine($"Identificación del paciente : {liquidacion.idPaciente}");
+                        Console.WriteLine($"Tipo de afiliacion : {liquidacion.tipoAfilacion}");
+                        Console.WriteLine($"Salario devengado por el paciente : {liquidacion.salarioDevengado:C}");
+                        Console.WriteLine($"Valor servicio de hospitalizacion : {liquidacion.valorHospitalizacion:C}");
+                        Console.WriteLine($"Tarifa Aplicada : {liquidacion.tarifa} años");
+                        Console.WriteLine($"Valor liquidado real de la cuota moderadora : {liquidacion.valorLiquidoRealCuotaModeradora}");
+                        Console.WriteLine($"¿Aplico Tope Maximo?: {liquidacion.pasoTopeMaximo}");
+                        Console.WriteLine($"Valor de La Cuota Moderadora : {liquidacion.valorCuotaModeradora}");
+                        Console.WriteLine("-----------------------------------------------------------------------------------------");
+
+                        Console.WriteLine();
+                       
+                    }
+                    Console.ReadKey();
 
                 }
                 else if (op == 3)
