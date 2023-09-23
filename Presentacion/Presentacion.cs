@@ -20,6 +20,7 @@ namespace Presentacion
             Double valorHospitalizacion;
             Double valorCuotaModeradora;
             Double Tarifa;
+            int contador = 0;
 
             int op = 0;
 
@@ -71,7 +72,7 @@ namespace Presentacion
                 }
                 else if (op == 2)
                 {
-
+                    
                     Console.Clear();
                     Console.WriteLine("Liquidaciones realizadas");
                     Console.WriteLine();
@@ -88,6 +89,7 @@ namespace Presentacion
                         Console.WriteLine($"Valor liquidado real de la cuota moderadora : {liquidacion.valorLiquidoRealCuotaModeradora}");
                         Console.WriteLine($"¿Aplico Tope Maximo?: {liquidacion.pasoTopeMaximo}");
                         Console.WriteLine($"Valor de La Cuota Moderadora : {liquidacion.valorCuotaModeradora}");
+
                         Console.WriteLine("-----------------------------------------------------------------------------------------");
 
                         Console.WriteLine();
@@ -98,7 +100,35 @@ namespace Presentacion
                 }
                 else if (op == 3)
                 {
-                    
+                    Console.Clear();
+                    String Regimen;
+                    int contadorRegimen=0;
+                    Console.WriteLine("Consulta por Tipo de Afiliacion");
+                    Console.WriteLine("Digite el tipo de Regimen del paciente : ");
+                    Regimen=Console.ReadLine();
+                    Console.WriteLine("------------------------------------------------------------------------------------");
+                    LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
+                    foreach (var liquidacion in liquidacionCuotaModeradoraService.ConsultarTodos())
+                    {
+                        contador++;
+                        if(string.Equals(Regimen ,liquidacion.tipoAfilacion, StringComparison.OrdinalIgnoreCase))
+                        {
+                            Console.WriteLine($"Identificación del paciente : {liquidacion.idPaciente}");
+                            Console.WriteLine($"Tipo de afiliacion : {liquidacion.tipoAfilacion}");
+                            Console.WriteLine($"Salario devengado por el paciente : {liquidacion.salarioDevengado:C}");
+                            Console.WriteLine($"Valor servicio de hospitalizacion : {liquidacion.valorHospitalizacion:C}");
+                            Console.WriteLine($"Tarifa Aplicada : {liquidacion.tarifa} años");
+                            Console.WriteLine($"Valor liquidado real de la cuota moderadora : {liquidacion.valorLiquidoRealCuotaModeradora}");
+                            Console.WriteLine($"¿Aplico Tope Maximo?: {liquidacion.pasoTopeMaximo}");
+                            Console.WriteLine($"Valor de La Cuota Moderadora : {liquidacion.valorCuotaModeradora}");
+                            contadorRegimen++;
+                        }
+                        Console.WriteLine();
+                        Console.WriteLine("---------------------------------------------------------------------------------------------------");
+                    }
+                    Console.WriteLine("Las liquidaaciones totales realizadas son : " + contador);
+                    Console.WriteLine("Las liquidaciones totales del regimen " + Regimen + " son : " + contadorRegimen);
+                    Console.ReadKey();
 
                 }
 
