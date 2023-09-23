@@ -1,4 +1,5 @@
 ﻿using BLL;
+using ENTITY;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,10 @@ namespace Presentacion
         static void Main(string[] args)
         {
             int numeroLiquidacion;
+            String fechaLiquidacion = DateTime.UtcNow.ToString("MM-dd-yyyy");
             int idPaciente;
-            int tipoAfilacion;
-            Double salarioDevengado;
+            String tipoAfilacion;
+            Double salarioDevengado = 0;
             Double valorHospitalizacion;
             Double valorCuotaModeradora;
             Double Tarifa;
@@ -45,21 +47,25 @@ namespace Presentacion
                     Console.WriteLine("Identificacion del Paciente : ");
                     idPaciente = int.Parse(Console.ReadLine());
                     Console.WriteLine("Tipo de Afiliacion : ");
-                    tipoAfilacion = int.Parse(Console.ReadLine());
+                    tipoAfilacion = Console.ReadLine();
 
-                 
-                    Console.WriteLine("Salario Devengado : ");
-                    salarioDevengado = Double.Parse(Console.ReadLine());
+                    if(String.Equals(tipoAfilacion, "Regimen contributivo", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine("Salario Devengado : ");
+                        salarioDevengado = Double.Parse(Console.ReadLine());
+                    }
+                    
                     
                     
                     Console.WriteLine("Valor del servicio de Hospitalizacion : ");
                     valorHospitalizacion = Double.Parse(Console.ReadLine());
 
-                    LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
-                    Tarifa = liquidacionCuotaModeradoraService.CalcularTarifa(salarioDevengado,tipoAfilacion);
-                    valorCuotaModeradora = liquidacionCuotaModeradoraService.CalcularCuotaModeradora(salarioDevengado,valorHospitalizacion, Tarifa, tipoAfilacion);
+                    LiquidacionCuotaModeradora liquidacion = new LiquidacionCuotaModeradora(numeroLiquidacion, fechaLiquidacion,idPaciente,tipoAfilacion,salarioDevengado,valorHospitalizacion);
+                    Tarifa = liquidacion.CalcularTarifa(salarioDevengado,tipoAfilacion);
+                    valorCuotaModeradora = liquidacion.CalcularCuotaModeradora(salarioDevengado,valorHospitalizacion, Tarifa, tipoAfilacion);
 
                     Console.WriteLine("El valor de la Cuota Moderadora del Paciente es : " + valorCuotaModeradora );
+                    Console.ReadKey();
                 }
                 else if (op == 2)
                 {
