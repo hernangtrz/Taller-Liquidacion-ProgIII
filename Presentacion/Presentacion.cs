@@ -21,6 +21,10 @@ namespace Presentacion
             Double valorCuotaModeradora;
             Double Tarifa;
             int contador = 0;
+            Double sumadorLiquidaciones = 0;
+            Double sumadorLiquidacionesRegimen1 = 0;
+            Double sumadorLiquidacionesRegimen2 = 0;
+            String validaRegimen="regimen contributivo";
 
             int op = 0;
 
@@ -31,7 +35,7 @@ namespace Presentacion
                 Console.WriteLine("1. Calcular Cuota Moderadora");
                 Console.WriteLine("2. Consultar Todas Las Liquidaciones de Cuota Moderadora");
                 Console.WriteLine("3. Consulta por Tipo de Afiliacion");
-                Console.WriteLine("4. Consulta Total de Liquidaciones de Cuota Moderadora POr Tipo de Afiliacion");
+                Console.WriteLine("4. Consulta Total de Liquidaciones de Cuota Moderadora Prr Tipo de Afiliacion");
                 Console.WriteLine("5. Consulta por Fecha");
                 Console.WriteLine("6. Consulta por Palabras");
                 Console.WriteLine("7. Salir");
@@ -106,7 +110,6 @@ namespace Presentacion
                     Console.WriteLine("Consulta por Tipo de Afiliacion");
                     Console.WriteLine("Digite el tipo de Regimen del paciente : ");
                     Regimen=Console.ReadLine();
-                    Console.WriteLine("------------------------------------------------------------------------------------");
                     LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
                     foreach (var liquidacion in liquidacionCuotaModeradoraService.ConsultarTodos())
                     {
@@ -126,10 +129,70 @@ namespace Presentacion
                         Console.WriteLine();
                         Console.WriteLine("---------------------------------------------------------------------------------------------------");
                     }
-                    Console.WriteLine("Las liquidaaciones totales realizadas son : " + contador);
+                    Console.WriteLine("Las liquidaciones totales realizadas son : " + contador);
                     Console.WriteLine("Las liquidaciones totales del regimen " + Regimen + " son : " + contadorRegimen);
                     Console.ReadKey();
 
+                }else if (op == 4)
+                {
+                    Console.Clear();
+                    String Regimen;
+                    Console.WriteLine("Consulta por Tipo de Afiliacion");
+                    Console.WriteLine("Digite el tipo de Regimen del paciente : ");
+                    Regimen = Console.ReadLine();
+                    if (!(string.Equals(validaRegimen, Regimen, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        Console.WriteLine("------------------------------------------------------------------------------------");
+                        LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
+                        foreach (var liquidacion in liquidacionCuotaModeradoraService.ConsultarTodos())
+                        {
+                            sumadorLiquidaciones += liquidacion.valorCuotaModeradora;
+                            if (string.Equals(Regimen, liquidacion.tipoAfilacion, StringComparison.OrdinalIgnoreCase))
+                            {
+                                sumadorLiquidacionesRegimen1 += liquidacion.valorCuotaModeradora;
+
+                            }
+                            else
+                            {
+                                sumadorLiquidacionesRegimen2 += liquidacion.valorLiquidoRealCuotaModeradora;
+                            }
+                            
+                        }
+                        Console.WriteLine("El valor total de todas las liquidaciones realizadas es :  " + sumadorLiquidaciones);
+                        Console.WriteLine("Elvalor total de las liquidaciones del " + Regimen + " es : " + sumadorLiquidacionesRegimen1);
+                        Console.WriteLine("El valor total de las liquidaciones del " + validaRegimen + " es : " + sumadorLiquidacionesRegimen2);
+                        Console.WriteLine();
+                        Console.WriteLine("---------------------------------------------------------------------------------------------------");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        validaRegimen = "Regimen subsidiado";
+                        Console.WriteLine("------------------------------------------------------------------------------------");
+                        LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
+                        foreach (var liquidacion in liquidacionCuotaModeradoraService.ConsultarTodos())
+                        {
+                            sumadorLiquidaciones += liquidacion.valorCuotaModeradora;
+                            if (string.Equals(Regimen, liquidacion.tipoAfilacion, StringComparison.OrdinalIgnoreCase))
+                            {
+                                sumadorLiquidacionesRegimen1 += liquidacion.valorCuotaModeradora;
+
+                            }
+                            else 
+                            {
+                                sumadorLiquidacionesRegimen2 += liquidacion.valorLiquidoRealCuotaModeradora;
+                            }
+                           
+                        }
+                        Console.WriteLine("El valor total de todas las liquidaciones realizadas es :  " + sumadorLiquidaciones);
+                        Console.WriteLine("El valor total de las liquidaciones del " + Regimen + " es : " + sumadorLiquidacionesRegimen1);
+                        Console.WriteLine("El valor total de las liquidaciones del " + validaRegimen + " es : " + sumadorLiquidacionesRegimen2);
+                        Console.WriteLine();
+                        Console.WriteLine("---------------------------------------------------------------------------------------------------");
+                        Console.ReadKey();
+                    }
+                    
+                    
                 }
 
             } while (op != 4);
