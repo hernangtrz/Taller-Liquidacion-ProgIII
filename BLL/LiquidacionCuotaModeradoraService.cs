@@ -27,7 +27,7 @@ namespace BLL
                 if (liquidacionCuotaModeradoraRepository.Buscar(liquidacionCuotaModeradora.numeroLiquidacion) == null)
                 {
                     liquidacionCuotaModeradoraRepository.Guardar(liquidacionCuotaModeradora);
-                    return $"se han guardado Satisfactoriamente los datos del establecimiento: {liquidacionCuotaModeradora.numeroLiquidacion} ";
+                    return $"se han guardado Satisfactoriamente los datos del liquidacion: {liquidacionCuotaModeradora.numeroLiquidacion} ";
                 }
                 else
                 {
@@ -48,11 +48,36 @@ namespace BLL
                 if (liquidacionCuotaModeradoraRepository.Buscar(numLiquidacion) != null)
                 {
                     liquidacionCuotaModeradoraRepository.Eliminar(numLiquidacion);
-                    return ($"se han Eliminado Satisfactoriamente los datos del establecimiento con Identificación: {numLiquidacion} ");
+                    return ($"Se han Eliminado Satisfactoriamente los datos del liquidacion con Identificación: {numLiquidacion} ");
                 }
                 else
                 {
-                    return ($"Lo sentimos, no se encuentra registrada un establecimiento con Identificacion {numLiquidacion}");
+                    return ($"Lo sentimos, no se encuentra registrada un liquidacion con Identificacion {numLiquidacion}");
+                }
+            }
+            catch (Exception e)
+            {
+
+                return $"Error de la Aplicacion: {e.Message}";
+            }
+
+        }
+        public string Modificar(int numLiquidacion, Double valorHospitalizacion)
+        {
+            try
+            {
+                if (liquidacionCuotaModeradoraRepository.Buscar(numLiquidacion) != null)
+                {
+                    LiquidacionCuotaModeradora liquidacionCuotaModeradora = new LiquidacionCuotaModeradora();
+                    liquidacionCuotaModeradora = liquidacionCuotaModeradoraRepository.Modificar(numLiquidacion, valorHospitalizacion);
+                    liquidacionCuotaModeradora.CalcularCuotaModeradora(liquidacionCuotaModeradora.salarioDevengado, liquidacionCuotaModeradora.valorHospitalizacion, liquidacionCuotaModeradora.tarifa, liquidacionCuotaModeradora.tipoAfilacion);
+                    Eliminar(numLiquidacion);
+                    Guardar(liquidacionCuotaModeradora);
+                    return ($"Se ha modificado Satisfactoriamente los datos del liquidacion con Identificación: {numLiquidacion} ");
+                }
+                else
+                {
+                    return ($"Lo sentimos, no se encuentra registrada un liquidacion con Identificacion {numLiquidacion}");
                 }
             }
             catch (Exception e)
@@ -66,6 +91,10 @@ namespace BLL
         {
             List<LiquidacionCuotaModeradora> establecimientos = liquidacionCuotaModeradoraRepository.ConsultarTodos();
             return establecimientos;
+        }
+        public LiquidacionCuotaModeradora Buscar(int numLiquidacion)
+        {
+            return liquidacionCuotaModeradoraRepository.Buscar(numLiquidacion);
         }
 
         public class ConsultaCuotaModeradoraResponse

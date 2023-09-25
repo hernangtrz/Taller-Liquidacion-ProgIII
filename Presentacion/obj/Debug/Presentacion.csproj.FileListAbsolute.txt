@@ -26,3 +26,17 @@ C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\ENTITY.pdb
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\DAL.pdb
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\BLL.dll
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\ENTITY.dll
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\DAL.dll
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\BLL.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\ENTITY.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\bin\Debug\DAL.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\Presentacion\obj\Debug\Presentacion.pdb

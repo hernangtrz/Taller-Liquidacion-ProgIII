@@ -16,3 +16,12 @@ C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\DAL\obj\Debug\DAL.dll
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\DAL\obj\Debug\DAL.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\bin\Debug\DAL.dll
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\bin\Debug\DAL.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\bin\Debug\ENTITY.dll
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\bin\Debug\ENTITY.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\obj\Debug\DAL.dll
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\DAL\obj\Debug\DAL.pdb

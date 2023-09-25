@@ -87,5 +87,21 @@ namespace DAL
             }
             return null;
         }
+        public LiquidacionCuotaModeradora Modificar(int numeroLiquidacion, Double valorHospitalizacion)
+        {
+            List<LiquidacionCuotaModeradora> liquidaciones = new List<LiquidacionCuotaModeradora>();
+            liquidaciones = ConsultarTodos();
+            FileStream file = new FileStream(FileName, FileMode.Create);
+            file.Close();
+            foreach (var item in liquidaciones)
+            {
+                if(numeroLiquidacion == item.numeroLiquidacion)
+                {
+                    item.valorHospitalizacion = valorHospitalizacion;
+                    return item;
+                }
+            }
+            return null;
+        }
     }
 }

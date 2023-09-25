@@ -10,3 +10,9 @@ C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\ENTITY\obj\Debug\ENTITY.dll
 C:\Users\JhonM\OneDrive\Documentos\Taller_liquidacion\Taller-Liquidacion-ProgIII\ENTITY\obj\Debug\ENTITY.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\ENTITY\bin\Debug\ENTITY.dll
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\ENTITY\bin\Debug\ENTITY.pdb
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\ENTITY\obj\Debug\ENTITY.csproj.AssemblyReference.cache
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\ENTITY\obj\Debug\ENTITY.csproj.CoreCompileInputs.cache
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\ENTITY\obj\Debug\ENTITY.dll
+C:\Users\HERNAN GUTIERREZ\Desktop\Taller-Liquidacion-ProgIII\ENTITY\obj\Debug\ENTITY.pdb
